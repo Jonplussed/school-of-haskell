@@ -35,7 +35,7 @@ map' :: (a -> b) -> [a] -> [b]
 map' f = foldr (\x ys -> f x : ys) []
 
 myFoldl :: (a -> b -> a) -> a -> [b] -> a
-myFoldl f = foldr (flip f)
+myFoldl f init list = foldr (flip f) init (reverse list)
 
 sieveSundaram :: Integer -> [Integer]
 sieveSundaram n =
